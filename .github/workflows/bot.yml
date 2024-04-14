@@ -36,4 +36,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo ${{ secrets.LICHESS_KEY }} > key.txt
+          chmod +x ./engines/fairy-stockfish-largeboard_x86-64  
           python3 lichess-bot.py
