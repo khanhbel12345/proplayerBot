@@ -45,7 +45,9 @@ MULTIPROCESSING_LIST_TYPE = MutableSequence[model.Challenge]
 POOL_TYPE = Pool
 LICHESS_TYPE = Union[lichess.Lichess, test_bot.lichess.Lichess]
 
-token = sys.argv[1]
+token = ""
+with open("key.txt", "r") as f:
+    token = f.read().strip()
 
 logger = logging.getLogger(__name__)
 
