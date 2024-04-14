@@ -34,4 +34,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: python3 lichess-bot.py "${{ secrets.LICHESS_KEY }}"
+        run:
+          echo ${{ secrets.LICHESS_KEY }} > key.txt
+          python3 lichess-bot.py
