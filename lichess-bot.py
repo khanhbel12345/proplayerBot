@@ -45,6 +45,8 @@ MULTIPROCESSING_LIST_TYPE = MutableSequence[model.Challenge]
 POOL_TYPE = Pool
 LICHESS_TYPE = Union[lichess.Lichess, test_bot.lichess.Lichess]
 
+token = sys.argv[1]
+
 logger = logging.getLogger(__name__)
 
 with open("lib/versioning.yml") as version_file:
@@ -1127,7 +1129,7 @@ def start_lichess_bot() -> None:
 
     max_retries = CONFIG.engine.online_moves.max_retries
     check_python_version()
-    li = lichess.Lichess(CONFIG.token, CONFIG.url, __version__, logging_level, max_retries)
+    li = lichess.Lichess(token, CONFIG.url, __version__, logging_level, max_retries)
 
     user_profile = li.get_profile()
     username = user_profile["username"]
