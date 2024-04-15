@@ -3,7 +3,7 @@ url: "https://lichess.org/"        # Lichess base URL.
 
 engine:                            # Engine settings.
   dir: "./engines/"                # Directory containing the engine. This can be an absolute path or one relative to lichess-bot/.
-  name: "fairy-stockfish-largeboard_x86-64"  # Binary name of the engine to use.
+  name: "stockfish-ubuntu-x86-64-sse41-popcnt"  # Binary name of the engine to use.
   working_dir: ""                  # Directory where the chess engine will read and write files. If blank or missing, the current directory is used.
                                    # NOTE: If working_dir is set, the engine will look for files and directories relative to this directory, not where lichess-bot was launched. Absolute paths are unaffected.
   protocol: "uci"                  # "uci", "xboard" or "homemade"
@@ -129,9 +129,9 @@ challenge:                         # Incoming challenges.
   sort_by: "best"                  # Possible values: "best" and "first".
   accept_bot: true                 # Accepts challenges coming from other bots.
   only_bot: false                  # Accept challenges by bots only.
-  max_increment: 20                # Maximum amount of increment to accept a challenge in seconds. The max is 180. Set to 0 for no increment.
+  max_increment: 180               # Maximum amount of increment to accept a challenge in seconds. The max is 180. Set to 0 for no increment.
   min_increment: 0                 # Minimum amount of increment to accept a challenge in seconds.
-  max_base: 1800                   # Maximum amount of base time to accept a challenge in seconds. The max is 10800 (3 hours).
+  max_base: 10800                   # Maximum amount of base time to accept a challenge in seconds. The max is 10800 (3 hours).
   min_base: 0                      # Minimum amount of base time to accept a challenge in seconds.
   #max_days: 14                     # Maximum number of days per move to accept a challenge for a correspondence game.
                                     # Unlimited games can be accepted by removing this field or specifying .inf
@@ -139,14 +139,14 @@ challenge:                         # Incoming challenges.
   variants:                        # Chess variants to accept (https://lichess.org/variant).
     - standard
     - fromPosition
-    - antichess
-    - atomic
+    #- antichess
+    #- atomic
     - chess960
-    - crazyhouse
-    - horde
-    - kingOfTheHill
-    - racingKings
-    - threeCheck
+    #- crazyhouse
+    #- horde
+    #- kingOfTheHill
+    #- racingKings
+    #- threeCheck
   time_controls:                   # Time controls to accept (bots are not allowed to play ultraBullet).
     - bullet
     - blitz

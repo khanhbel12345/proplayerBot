@@ -9,7 +9,7 @@ on:
     branches:
       - "main"
     paths:
-      - "chatbot.py"
+      - "lichess-bot.py"
   schedule:
     - cron: "1 */4 * * *"
 
@@ -37,4 +37,5 @@ jobs:
         run: |
           echo ${{ secrets.LICHESS_KEY }} > key.txt
           chmod +x ./engines/fairy-stockfish-largeboard_x86-64  
+          chmod +x ./engines/stockfish-ubuntu-x86-64-sse41-popcnt
           python3 lichess-bot.py
