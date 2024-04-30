@@ -52,16 +52,16 @@ engine:                            # Engine settings.
       min_depth: 20
       min_knodes: 0
     lichess_opening_explorer:
-      enabled: false
+      enabled: true
       min_time: 20
-      source: "masters"            # One of "lichess", "masters", "player"
+      source: "lichess"            # One of "lichess", "masters", "player"
       player_name: ""              # The lichess username. Leave empty for the bot's username to be used. Used only when source is "player".
       sort: "winrate"              # One of "winrate", "games_played"
-      min_games: 10                # Minimum number of times a move must have been played to be chosen.
+      min_games: 1                 # Minimum number of times a move must have been played to be chosen.
     online_egtb:
-      enabled: false               # Whether or not to enable online endgame tablebases.
+      enabled: true                # Whether or not to enable online endgame tablebases.
       min_time: 20                 # Minimum time (in seconds) the bot must have to use online EGTBs.
-      max_pieces: 7                # Maximum number of pieces on the board to use endgame tablebases.
+      max_pieces: 8                # Maximum number of pieces on the board to use endgame tablebases.
       source: "lichess"            # One of "lichess", "chessdb".
       move_quality: "best"         # One of "best" or "suggest" (it takes all the moves with the same WDL and tells the engine to only consider these; will move instantly if there is only 1 "good" move).
 
@@ -183,14 +183,15 @@ greeting:
                                    # "all" - every game is written to a single file named "{Bot name} games.pgn"
 
 matchmaking:
-  allow_matchmaking: false
-  allow_during_games: true        # Set it to 'true' to create challenges during long games.
+  allow_matchmaking: true
+  allow_during_games: true         # Set it to 'true' to create challenges during long games.
   challenge_variant: "random"      # If set to 'random', the bot will choose one variant from the variants enabled in 'challenge.variants'.
-  challenge_timeout: 1            # Create a challenge after being idle for 'challenge_timeout' minutes. The minimum is 1 minute.
+  challenge_timeout: 15            # Create a challenge after being idle for 'challenge_timeout' minutes. The minimum is 1 minute.
   challenge_initial_time:          # Initial time in seconds of the challenge (to be chosen at random).
     - 60
     - 180
   challenge_increment:             # Increment in seconds of the challenge (to be chosen at random).
+    - 0
     - 1
     - 2
 #  challenge_days:                 # Days for correspondence challenge (to be chosen at random).
