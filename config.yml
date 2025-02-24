@@ -125,7 +125,7 @@ correspondence:
   ponder: false                    # Ponder in correspondence games the bot is connected to.
 
 challenge:                         # Incoming challenges.
-  concurrency: 5                   # Number of games to play simultaneously.
+  concurrency: 10                   # Number of games to play simultaneously.
   sort_by: "best"                  # Possible values: "best" and "first".
   accept_bot: true                 # Accepts challenges coming from other bots.
   only_bot: false                  # Accept challenges by bots only.
@@ -148,12 +148,12 @@ challenge:                         # Incoming challenges.
     #- racingKings
     #- threeCheck
   time_controls:                   # Time controls to accept (bots are not allowed to play ultraBullet).
-    - bullet
-    - blitz
-    #- rapid
-    #- classical
-    #- correspondence
-    #- unlimited
+     - bullet
+     - blitz
+     - rapid
+     - classical
+     - correspondence
+     - unlimited
   modes:                           # Game modes to accept.
     #- casual                       # Unrated games.
     - rated                        # Rated games - must comment if the engine doesn't try to win.
@@ -190,9 +190,12 @@ matchmaking:
   challenge_initial_time:          # Initial time in seconds of the challenge (to be chosen at random).
     - 60
     - 180
+    - 600
+    - 1800
   challenge_increment:             # Increment in seconds of the challenge (to be chosen at random).
     - 0
     - 1
+    - 3
 #  challenge_days:                 # Days for correspondence challenge (to be chosen at random).
 #    - 1
 #    - 2
