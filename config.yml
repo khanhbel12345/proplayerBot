@@ -91,7 +91,7 @@ engine:                            # Engine settings.
     Threads: 4                    # Sử dụng nhiều luồng CPU hơn.
     Hash: 1024                    # Tăng bộ nhớ đệm để tăng tốc độ tìm nước đi.
     UCI_LimitStrength: false       # Đảm bảo không giới hạn sức mạnh.
-    UCI_Elo: 3200                  # Chạy ở mức Elo tối đa.
+    UCI_Elo: 3190                  # Chạy ở mức Elo tối đa.
     UCI_ShowWDL: true             # Hiển thị tỷ lệ thắng/thua/hòa.
     # SyzygyPath: "./syzygy/"       # Thêm Tablebase nếu có.
 #   go_commands:                   # Additional options to pass to the UCI go command.
